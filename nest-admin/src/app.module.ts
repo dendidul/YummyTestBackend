@@ -11,21 +11,22 @@ import { UploadController } from './product/upload.controller';
 //import { UploadController } from './upload/upload.controller';
 
 @Module({
-  imports: [UserModule,
-  TypeOrmModule.forRoot({
-    type:'postgres',
-    host:'127.0.0.1',
-    port:5432,
-    username:'postgres',
-    password:'osama123',
-    database:'admin',
-    autoLoadEntities:true,
-    synchronize:true
-  }),
-  AuthModule,
-  CommonModule,
-  ProductModule
-  ]
+  imports: [
+    UserModule,
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: '127.0.0.1',
+      port: 5432,
+      username: 'postgres',
+      password: 'osama123',
+      database: 'admin',
+      autoLoadEntities: true,
+      synchronize: true,
+    }),
+    AuthModule,
+    CommonModule,
+    ProductModule,
+  ],
   // ,
   // controllers: [AppController, UploadController],
   // providers: [AppService, AbstractService],

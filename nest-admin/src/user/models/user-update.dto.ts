@@ -1,12 +1,9 @@
-import { IsEmail, IsNotEmpty } from "class-validator";
+import { IsEmail, IsNotEmpty } from 'class-validator';
 
 export class UserUpdateDto {
-    
-    firstname?:string;
+  firstname?: string;
 
-  
-    lastname?:string;
-    
-   
-    email?:string;
+  lastname?: string;
+
+  email?: string;
 }

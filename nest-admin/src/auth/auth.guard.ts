@@ -4,22 +4,15 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+  constructor(private jwtService: JwtService) {}
 
-  constructor(private jwtService:JwtService){
-
-  }
-
-  canActivate(context: ExecutionContext)
-  {
+  canActivate(context: ExecutionContext) {
     const request = context.switchToHttp().getRequest();
-    try{
+    try {
       const jwt = request.cookies['jwt'];
       return this.jwtService.verify(jwt);
-    }
-    catch(e)
-    {
+    } catch (e) {
       return false;
     }
-   
   }
 }
